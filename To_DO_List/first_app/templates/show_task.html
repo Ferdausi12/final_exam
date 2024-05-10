@@ -8,14 +8,21 @@
           <tr>
               <th scope="col">Task Tittle</th>
               <th scope="col">Description</th>
+              <th scope="col">Edit Action</th>
+              <th scope="col">Delete Action</th>
+              <th scope="col">Completed Action</th>
           </tr>
       </thead>
       <tbody>
           {% for item in data %}
   
           <tr>
-              <td>{{item.taskTittle}}</td>
-              <td>{{item.task_description}}</td>
+            <td>{{item.taskTittle}}</td>
+            <td>{{item.task_description}}</td>
+            <td><a href="{% url 'update_task' pk=item.id %}" class="btn btn-warning btn-sm">Edit</a></td>
+            <td><a href="{% url 'delete_task' pk=item.id %}" class="btn btn-danger btn-sm">Delete</a></td>
+            <td><a href="{% url 'complete_task' %}" class="btn btn-danger btn-sm">Complete</a></td>
+              
           </tr>
   
           {% endfor %}
