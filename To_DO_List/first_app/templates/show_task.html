@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div style="width: 50%; margin:auto">
+    <h1>show data</h1>
+    <table class="table table-striped">
+      <thead>
+          <tr>
+              <th scope="col">Task Tittle</th>
+              <th scope="col">Description</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for item in data %}
+  
+          <tr>
+              <td>{{item.taskTittle}}</td>
+              <td>{{item.task_description}}</td>
+          </tr>
+  
+          {% endfor %}
+      </tbody>
+  </table>
+</div>
+
+{% endblock content %}
